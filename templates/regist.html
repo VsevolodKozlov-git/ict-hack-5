@@ -2,61 +2,74 @@
 <html lang="ru">
     <head>
         <title>Обнуление</title>
-        <link rel="stylesheet" href="css/regist.css">
+        <link rel="stylesheet" href="{{ url_for('static', filename='styles/regist.css') }}">
         <meta http-equiv="Content-type" content="text/html;charset=UTF-8"/>
         <link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@100;200;300;400;500;600;700;800;900&display=swap" rel="stylesheet">
     </head>
     <body>
         <div class="container">
-            <form action="action_page.php">
+            <form method="POST" action="/register_post">
                 <h1>Форма регистрации</h1>
                 <p>Пожалуйста, заполните эту форму, чтобы создать учетную запись.</p>
                 <hr>
-                <label for="name"><b>Имя</b></label>
-                <input class="form" type="text" placeholder="Введите ваше имя" name="name" required>
+                {{ form.hidden_tag() }}
+                {% for field in form %}
+                    {% if field.name != 'csrf_token' %}
+                        <p>
+                            {{ field.label }} {{ field(class='form') }}
+                        </p>
+                    {% endif %}
+                {% endfor %}
 
-                <label for="lastname"><b>Фамилия</b></label>
-                <input class="form" type="text" placeholder="Введите вашу фамилию" name="lastname" required>
+                <p class="signupbtn">
+                    <input type="submit" class="signupbtn" value="Зарегистрироваться">
+                </p>
 
-                <label for="patronymic"><b>Отчество</b></label>
-                <input class="form" type="text" placeholder="Введите ваше отчество" name="patronymic">
-                
-                <label for="email"><b>Email</b></label>
-                <input class="form" type="email" placeholder="Введите ваш email" name="name" required>
+{#                <label for="name"><b>Имя</b></label>#}
+{#                <input class="form" type="text" placeholder="Введите ваше имя" name="name" required>#}
 
-            
-                <label for="psw"><b>Пароль</b></label>
-                <input class="form" type="password" placeholder="Введите пароль" name="psw" required>
-            
-                <label for="psw-repeat"><b>Повторить пароль</b></label>
-                <input class="form" type="password" placeholder="Повторите пароль" name="psw-repeat" required>
-            
-                <label for="about_yourself"><b>Обо мне</b></label>
-                <textarea class="form" name="about_yourself" > </textarea>
-
-                <label for="develop-area"><b>Области развития</b></label>
-                <textarea class="form" name="develop-area" > </textarea>
-
-                <label for="education"><b>Образование</b></label>
-                <textarea class="form" name="education" > </textarea>
-
-                <label for="Courses"><b>Курсы</b></label>
-                <textarea class="form" name="Courses" > </textarea>
-
-                <label for="Courses"><b>Опыт работы</b></label>
-                <textarea class="form" name="Courses" > </textarea>
-            
-                <label for="hard-skills"><b>Хардскилы</b></label>
-                <textarea class="form" name="hard-skills" > </textarea>
-
-                <label for="soft-skills"><b>Софтскилы</b></label>
-                <textarea class="form" name="soft-skills" > </textarea>
-            
-            
-                <div class="clearfix buttons">
-                    <button type="button" class="cancelbtn">Отменить</button>
-                    <button type="submit" class="signupbtn">Регистрация</button>
-                </div>
+{#                <label for="lastname"><b>Фамилия</b></label>#}
+{#                <input class="form" type="text" placeholder="Введите вашу фамилию" name="lastname" required>#}
+{##}
+{#                <label for="patronymic"><b>Отчество</b></label>#}
+{#                <input class="form" type="text" placeholder="Введите ваше отчество" name="patronymic">#}
+{#                #}
+{#                <label for="email"><b>Email</b></label>#}
+{#                <input class="form" type="email" placeholder="Введите ваш email" name="name" required>#}
+{##}
+{#            #}
+{#                <label for="psw"><b>Пароль</b></label>#}
+{#                <input class="form" type="password" placeholder="Введите пароль" name="psw" required>#}
+{#            #}
+{#                <label for="psw-repeat"><b>Повторить пароль</b></label>#}
+{#                <input class="form" type="password" placeholder="Повторите пароль" name="psw-repeat" required>#}
+{#            #}
+{#                <label for="about_yourself"><b>Обо мне</b></label>#}
+{#                <textarea class="form" name="about_yourself" > </textarea>#}
+{##}
+{#                <label for="develop-area"><b>Области развития</b></label>#}
+{#                <textarea class="form" name="develop-area" > </textarea>#}
+{##}
+{#                <label for="education"><b>Образование</b></label>#}
+{#                <textarea class="form" name="education" > </textarea>#}
+{##}
+{#                <label for="Courses"><b>Курсы</b></label>#}
+{#                <textarea class="form" name="Courses" > </textarea>#}
+{##}
+{#                <label for="Courses"><b>Опыт работы</b></label>#}
+{#                <textarea class="form" name="Courses" > </textarea>#}
+{#            #}
+{#                <label for="hard-skills"><b>Хардскилы</b></label>#}
+{#                <textarea class="form" name="hard-skills" > </textarea>#}
+{##}
+{#                <label for="soft-skills"><b>Софтскилы</b></label>#}
+{#                <textarea class="form" name="soft-skills" > </textarea>#}
+{#            #}
+{#            #}
+{#                <div class="clearfix buttons">#}
+{#                    <button type="button" class="cancelbtn">Отменить</button>#}
+{#                    <button type="submit" class="signupbtn">Регистрация</button>#}
+{#                </div>#}
             </form>
         </div>
     </body>
