@@ -7,35 +7,57 @@
         <link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@100;200;300;400;500;600;700;800;900&display=swap" rel="stylesheet">
     </head>
     <body>
-        <form action="action_page.php" style="border:1px solid #ccc">
-            <div class="container">
-            <h1>Форма регистрации</h1>
-            <p>Пожалуйста, заполните эту форму, чтобы создать учетную запись.</p>
-            <hr>
-        
-            <label for="number"><b>Номер</b></label>
-            <input type="text" placeholder="Введите ваш номер телефона" name="number" required>
+        <div class="container">
+            <form action="action_page.php">
+                <h1>Форма регистрации</h1>
+                <p>Пожалуйста, заполните эту форму, чтобы создать учетную запись.</p>
+                <hr>
+                <label for="name"><b>Имя</b></label>
+                <input class="form" type="text" placeholder="Введите ваше имя" name="name" required>
 
-            <label for="email"><b>Email</b></label>
-            <input type="text" placeholder="Введите вашу почту" name="email" required>
-        
-            <label for="psw"><b>Пароль</b></label>
-            <input type="password" placeholder="Введите пароль" name="psw" required>
-        
-            <label for="psw-repeat"><b>Повторить пароль</b></label>
-            <input type="password" placeholder="Повторите пароль" name="psw-repeat" required>
-        
-            <label>
-                <input type="checkbox" checked="checked" name="remember" style="margin-bottom:15px"> Запомнить меня
-            </label>
-        
-            <p>Создавая учетную запись, вы соглашаетесь с нашим <a href="#" style="color:dodgerblue">Условия и конфиденциальность</a>.</p>
-        
-            <div class="clearfix">
-                <button type="button" class="cancelbtn">Отменить</button>
-                <button type="submit" class="signupbtn">Регистрация</button>
-            </div>
-            </div>
-        </form>
+                <label for="lastname"><b>Фамилия</b></label>
+                <input class="form" type="text" placeholder="Введите вашу фамилию" name="lastname" required>
+
+                <label for="patronymic"><b>Отчество</b></label>
+                <input class="form" type="text" placeholder="Введите ваше отчество" name="patronymic">
+                
+                <label for="email"><b>Email</b></label>
+                <input class="form" type="email" placeholder="Введите ваш email" name="name" required>
+
+            
+                <label for="psw"><b>Пароль</b></label>
+                <input class="form" type="password" placeholder="Введите пароль" name="psw" required>
+            
+                <label for="psw-repeat"><b>Повторить пароль</b></label>
+                <input class="form" type="password" placeholder="Повторите пароль" name="psw-repeat" required>
+            
+                <label for="about_yourself"><b>Обо мне</b></label>
+                <textarea class="form" name="about_yourself" > </textarea>
+
+                <label for="develop-area"><b>Области развития</b></label>
+                <textarea class="form" name="develop-area" > </textarea>
+
+                <label for="education"><b>Образование</b></label>
+                <textarea class="form" name="education" > </textarea>
+
+                <label for="Courses"><b>Курсы</b></label>
+                <textarea class="form" name="Courses" > </textarea>
+
+                <label for="Courses"><b>Опыт работы</b></label>
+                <textarea class="form" name="Courses" > </textarea>
+            
+                <label for="hard-skills"><b>Хардскилы</b></label>
+                <textarea class="form" name="hard-skills" > </textarea>
+
+                <label for="soft-skills"><b>Софтскилы</b></label>
+                <textarea class="form" name="soft-skills" > </textarea>
+            
+            
+                <div class="clearfix buttons">
+                    <button type="button" class="cancelbtn">Отменить</button>
+                    <button type="submit" class="signupbtn">Регистрация</button>
+                </div>
+            </form>
+        </div>
     </body>
 </html>
