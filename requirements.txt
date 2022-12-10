@@ -1,0 +1,5 @@
+Flask~=2.2.2
+Flask-Bootstrap
+Flask-Moment
+Flask-WTF
+flask-sqlalchemy

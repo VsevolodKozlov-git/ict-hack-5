@@ -1,4 +1,5 @@
 * {box-sizing: border-box}
+
 body{
     background-color: #000;
     color: #fff;
@@ -37,6 +38,7 @@ hr {
 }
 button {
   background-color: #221183;
+
   color: white;
   padding: 14px 20px;
   margin: 8px 0;
@@ -50,10 +52,12 @@ button:hover {
   opacity:1;
 }
 
+
 .cancelbtn {
   padding: 14px 20px;
   background-color: #f44336;
 }
+
 
 .cancelbtn, .signupbtn {
   width: 40%;
