@@ -69,6 +69,11 @@ li{
 .photo{
     border-radius: 7px;
 }
+.title{
+    font-size: 20px;
+    font-weight: bold;
+    color: #52A874;
+}
 .menu__data {
     margin: 20px 0;
 }
@@ -87,7 +92,6 @@ li{
     border: 4px #221183 solid;
     color: #fff;
     border-radius: 10px;
-    font-family: Gorizont;
     font-weight: 400;
 
     
@@ -99,6 +103,7 @@ li{
     width: 100%;
     display: flex;
     flex: 1 1 auto;
+    padding: 30px;
 
 }
 .prof__personality {
@@ -116,6 +121,7 @@ li{
 
 .personality__item {
     margin: 20px 0;
+    flex: 0 1 50%;
 }
 .prof__info {
     width: 100%;
@@ -129,16 +135,25 @@ li{
 .info__contacts {
     margin: 20px 0;
 }
+.info__personality{
+    display: flex;
+    justify-content:space-between;
+}
 .info__education {
     margin: 20px 0;
+    flex: 0 1 50%;
 }
-.info__skills {
+.skills {
     display: flex;
     margin: 20px 0;
+    justify-content:space-between;
 }
 .hard-skills {
     flex: 0 1 50%;
 }
 .soft-skills {
     flex: 0 1 50%;
+}
+.form_name{
+    font-weight: bold;
 }

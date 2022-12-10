@@ -2,7 +2,8 @@
 <html lang="ru">
     <head>
         <title>Обнуление</title>
-        <link rel="stylesheet" href="{{ url_for('static', filename='styles/privatecab.css') }}">
+        <!-- <link rel="stylesheet" href="{{ url_for('static', filename='styles/privatecab.css') }}"> -->
+        <link rel="stylesheet" href="../static/styles/privatecab.css">
 
         <meta http-equiv="Content-type" content="text/html;charset=UTF-8"/>
         <link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@100;200;300;400;500;600;700;800;900&display=swap" rel="stylesheet">
@@ -32,40 +33,11 @@
                         <div class="personaliti__photo _ibj">
                             <img src="img/student.png" class="photo" alt="Мое фото">
                         </div>
-                        <div class="personality__item">
-                            <ul>
-                                <li>
-                                    {% if about %}
-                                        <p>О себе:</p>
-                                        <p>{{about}}</p>
-                                    {% endif %}
-
-                                </li>
-                                <li>
-                                    {% if growth_area %}
-                                        <p>Области развития:</p>
-                                        <p>{{growth_area}}</p>
-                                    {% endif %}
-
-                                </li>
-                                <li>
-                                    {% if tags %}
-                                        <p>Теги:</p>
-                                        <p>{{ tags }}</p>
-                                    {% endif %}
-
-                                </li>
-                            </ul>
-                        </div>
-                    </div>
-                    <div class="prof__info">
-                        <div class="info__name">
-                            {{ surname }} {{ name }} {% if patronymic %}{{patronymic}}{% endif %}
-                        </div>
                         <div class="info__contacts">
+                            <h3 class="title">Контакты</h3>
                             <ul>
                                 <li>
-                                    <p>Почта:</p>
+                                    <p class="form_name">Почта:</p>
                                     <p>{{ email }}</p>
                                 </li>
                                 <li>
@@ -88,51 +60,84 @@
                                 </li>
                             </ul>
                         </div>
-                        <div class="info__education">
-                            <ul>
-                                <li>
-                                    {% if education %}
-                                        <p>Образование:</p>
-                                        <p>{{ education }}</p>
-                                    {% endif %}
+                    </div>    
+                        
+                    <div class="prof__info">
+                        <div class="info__name">
+                            {{ surname }} {{ name }} {% if patronymic %}{{patronymic}}{% endif %}
+                        </div>
+                        <div class="info__personality">
+                            
+                            <div class="info__education">
+                                <h3 class="title">Опыт</h3>
+                                <ul>
+                                    <li>
+                                        {% if education %}
+                                            <p class="form_name">Образование:</p>
+                                            <p>{{ education }}</p>
+                                        {% endif %}
 
-                                </li>
-                                <li>
-                                    {% if courses %}
-                                        <p>Курсы:</p>
-                                        <p>{{ courses }}</p>
-                                    {% endif %}
+                                    </li>
+                                    <li>
+                                        {% if courses %}
+                                            <p class="form_name">Курсы:</p>
+                                            <p>{{ courses }}</p>
+                                        {% endif %}
 
-                                </li>
-                                <li>
-                                    {% if projects %}
-                                        <p>Проекты:</p>
-                                        <p>{{ projects }}</p>
-                                    {% endif %}
+                                    </li>
+                                    <li>
+                                        {% if projects %}
+                                            <p class="form_name">Проекты:</p>
+                                            <p>{{ projects }}</p>
+                                        {% endif %}
 
-                                </li>
-                                <li>
-                                    {% if job_experience %}
-                                        <p>Опыт работы</p>
-                                        <p>{{ job_experience }}</p>
-                                    {% endif %}
+                                    </li>
+                                    <li>
+                                        {% if job_experience %}
+                                            <p class="form_name">Опыт работы</p>
+                                            <p>{{ job_experience }}</p>
+                                        {% endif %}
 
-                                </li>
-                            </ul>
+                                    </li>
+                                </ul>
+                            </div>
+
+                            <div class="personality__item">
+                                <h3 class="title">Внеучебная деятельность</h3>
+                                <ul>
+                                    <li>
+                                        {% if about %}
+                                            <p class="form_name">О себе:</p>
+                                            <p>{{about}}</p>
+                                        {% endif %}
+
+                                    </li>
+                                    <li>
+                                        {% if growth_area %}
+                                            <p class="form_name">Области развития:</p>
+                                            <p>{{growth_area}}</p>
+                                        {% endif %}
+
+                                    </li>
+                                </ul>
+                            </div>
                         </div>
                         <div class="info__skills">
-                            <div class="hard-skills">
-                                {% if hard_skills %}
-                                    <p>Хардскилы:</p>
-                                    <p>{{ hard_skills }}</p>
-                                {% endif %}
+                            <h3 class="title">Навыки</h3>
+                            <div class="skills">
+                                <div class="hard-skills">
+                                    {% if hard_skills %}
+                                        <p class="form_name">Хардскилы:</p>
+                                        <p>{{ hard_skills }}</p>
+                                    {% endif %}
 
-                            </div>
-                            <div class="soft-skills">
-                                {% if soft_skills %}
-                                    <p>Софтскилы:</p>
-                                    <p>{{ soft_skills }}</p>
-                                {% endif %}
+                                </div>
+                                <div class="soft-skills">
+                                    {% if soft_skills %}
+                                        <p class="form_name">Софтскилы:</p>
+                                        <p>{{ soft_skills }}</p>
+                                    {% endif %}
+                                </div>
                             </div>
                         </div>
                     </div>
