@@ -1,18 +1,19 @@
 <!DOCTYPE html>
 <html lang="ru">
     <head>
-        <title>Обнуление</title>
-        <!-- <link rel="stylesheet" href="{{ url_for('static', filename='styles/privatecab.css') }}"> -->
-        <link rel="stylesheet" href="../static/styles/privatecab.css">
-
+        <title>Личный кабинет</title>
+        <link rel="stylesheet" href="{{ url_for('static', filename='styles/privatecab.css') }}">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <meta http-equiv="Content-type" content="text/html;charset=UTF-8"/>
+        <script
+        src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.1/jquery.min.js"></script>
         <link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@100;200;300;400;500;600;700;800;900&display=swap" rel="stylesheet">
     </head>
     <body>
         <div class="container">
             <div class="privateOffice">
                 <div class="menu">
-                    <div class="menu__data data">
+                    <div class="menu__data data" id="nav">
                         <button class="data__button-menu">
                             Профиль
                         </button>
@@ -25,8 +26,11 @@
                         <button class="data__button-menu">
                             Чаты
                         </button>
-
                     </div>
+                    <button class="burger" type="button" id="navToggle">
+                        <span class="burger_item">Menu</span>
+                    </button>
+                
                 </div>
                 <div class="prof">
                     <div class="prof__personality personality">
@@ -42,19 +46,19 @@
                                 </li>
                                 <li>
                                     {% if contact1_name %}
-                                        <p>{{ contact1_name }}:</p>
+                                        <p class="form_name">{{ contact1_name }}:</p>
                                         <p>{{ contact1_value }}</p>
                                     {% endif %}
                                 </li>
                                 <li>
                                     {% if contact2_name %}
-                                        <p>{{ contact2_name }}:</p>
+                                        <p class="form_name">{{ contact2_name }}:</p>
                                         <p>{{ contact2_value }}</p>
                                     {% endif %}
                                 </li>
                                 <li>
                                     {% if contact3_name %}
-                                        <p>{{ contact3_name }}:</p>
+                                        <p class="form_name">{{ contact3_name }}:</p>
                                         <p>{{ contact3_value }}</p>
                                     {% endif %}
                                 </li>
@@ -145,5 +149,7 @@
             </div>
 
         </div>
+
+        <script src="../static/styles/privatecab.js"></script>
     </body>
 </html>
